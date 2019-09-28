@@ -1,0 +1,16 @@
+
+
+<div class="contenedor">
+    <div class="izquierda">
+        <img *ngIf="imagen!=null" src="{{imagen}}" alt="">
+        <video id="video" *ngIf="video!=null" src="{{video}}"></video>
+    </div>
+    <div class="derecha">
+        <div [ngClass]="{
+            'activo': 7===i,
+            'no-activo': 7!==i
+        }" class="juego" *ngFor="let juego of listaJuegos;let i = index">{{juego}}</div>
+
+    </div>
+
+</div>
