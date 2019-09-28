@@ -19,6 +19,7 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+
     console.log('window', window);
     const gamepad: any = new Gamepad();
     console.log('gamepad', gamepad);
@@ -118,5 +119,10 @@ export class AppComponent {
     this.listaJuegos.push(primero);
     this.listaJuegos.splice(0, 1);
     this.loadDemo(this.listaJuegos[7]);
+  }
+
+  noImage() {
+
+    this.imagen = '/assets/media/Wheel/no-image.png';
   }
 }

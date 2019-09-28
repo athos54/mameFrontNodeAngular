@@ -1,16 +1,32 @@
-
-
-<div class="contenedor">
+<div id="contenedor" class="contenedor">
     <div class="izquierda">
-        <img *ngIf="imagen!=null" src="{{imagen}}" alt="">
-        <video id="video" *ngIf="video!=null" src="{{video}}"></video>
+        <div class="titulo">
+            <img (error)="noImage()" *ngIf="imagen!=null" [src]="imagen" alt="">
+        </div>
+        <div class="video">
+            <video id="video" *ngIf="video!=null" [src]="video"></video>
+        </div>
     </div>
     <div class="derecha">
-        <div [ngClass]="{
-            'activo': 7===i,
-            'no-activo': 7!==i
-        }" class="juego" *ngFor="let juego of listaJuegos;let i = index">{{juego}}</div>
+        <div class="arriba">
+            <div class="letras">A-C</div>
+            <div class="letras">D-F</div>
+            <div class="letras">G-I</div>
+            <div class="letras">J-L</div>
+            <div class="letras">M-Ñ</div>
+            <div class="letras">O-Q</div>
+            <div class="letras">R-T</div>
+            <div class="letras">U-W</div>
+            <div class="letras">X-Z</div>
+
+        </div>
+        <div class="abajo">
+            <div [ngClass]="{
+                'activo': 7===i,
+                'no-activo': 7!==i
+            }" class="juego" *ngFor="let juego of listaJuegos;let i = index">{{juego}}</div>
+
+        </div>
 
     </div>
-
 </div>

@@ -1,40 +1,94 @@
-
-.contenedor{
+.contenedor {
     background: #ccc;
     height: 100%;
     width: 100%;
     display: flex;
-    .izquierda{
+    .izquierda {
         flex: 0 0 50%;
-        display:flex;
+        display: flex;
         flex-direction: column;
-    }
-    .derecha{
-        flex: 0 0 50%;
-        .juego{
+        background: url('/assets/media/images/cabinet.png');
+        background-repeat: no-repeat;
+        position: relative;
+        .titulo {
+            position: relative;
+            background: black;
+            top: 66px;
+            left: 168px;
+            width: 328px;
+            height: 78px;
+            border-radius: 7px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 1rem;
+            img {
+                max-height: 90%;
+                // object-fit: contain;
+            }
+        }
+        .video {
+            border-radius: 7px;
+            position: relative;
+            background: black;
+            top: 154px;
+            left: 172px;
+            width: 316px;
+            height: 172px;
+            video {
+                max-height: 100%;
+            }
+        }
+        img,
+        video {
             width: 100%;
-            height: 50px;
-            background: orangered;
-            color: white;
-            font-weight: bold;
-            border-radius: 20rem;
-        }
-        .activo{
-            background:blue;
-        }
-        .no-activo{
-            transform: scale(.8);
-            // animation-name: example;
-            // animation-duration: 4s;
+            object-fit: contain;
         }
     }
-
+    .derecha {
+        flex: 0 0 50%;
+        .arriba {
+            display: flex;
+            justify-content: space-around;
+            .letras {
+                min-width: 40px;
+                text-align: center;
+                padding: 1rem .5rem;
+                background: blue;
+                color: white;
+                font-weight: bold;
+                border: 1px solid black;
+                border-radius: 7px;
+            }
+        }
+        .abajo {
+            .juego {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1rem;
+                width: 100%;
+                height: 50px;
+                background: orangered;
+                color: white;
+                font-weight: bold;
+                border-radius: 20rem;
+            }
+            .activo {
+                background: blue;
+            }
+            .no-activo {
+                transform: scale(.8);
+                // animation-name: example;
+                // animation-duration: 4s;
+            }
+        }
+    }
     @keyframes example {
-        0%   {transform: scale(1)}
-        100% {transform: scale(.8)}
-      }
+        0% {
+            transform: scale(1)
+        }
+        100% {
+            transform: scale(.8)
+        }
+    }
 }
