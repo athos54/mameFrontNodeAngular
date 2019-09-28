@@ -63,8 +63,8 @@ app.listen(port, () => {
     });
 
     setTimeout(() => {
-        // var command = 'google-chrome --kiosk http://localhost:8080'; //fullScreen
-        var command = 'google-chrome http://localhost:8080'; //normal
+        var command = 'google-chrome --no-user-gesture-required --kiosk http://localhost:8080'; //fullScreen
+        // var command = 'google-chrome http://localhost:8080'; //normal
 
         exec(command, (err, stdout, stderr) => {
             if (err) {
