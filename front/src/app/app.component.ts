@@ -94,9 +94,13 @@ export class AppComponent {
     console.log(juego);
     this.juegoIniciado = true;
     axios.get('http://localhost:3000/lanzar?juego=' + juego).then(result => {
-      console.log('then');
-      this.juegoIniciado = false;
+      console.log('then', result);
+      if (result.data === 'mameCerrado') {
+        // this.juegoIniciado = false;
+      }
     }).catch(() => {
+      console.log('catch');
+
       this.juegoIniciado = false;
     });
     this.imagen = null;
